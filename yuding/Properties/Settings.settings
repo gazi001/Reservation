@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="yuding.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="yuding_net_kuaishun_fx_SendSms" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://fx.kuaishun.net/Sms/WebService/SendSms.asmx</Value>
+    </Setting>
+    <Setting Name="yuding_net_kuaishun_ticketmk_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ticketmk.kuaishun.net/service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

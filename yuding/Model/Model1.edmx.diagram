@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d59cdebcde3743a78916b0e619df3c0c" Name="关系图1" ZoomLevel="71">
+        <EntityTypeShape EntityType="yudingModel.Activity" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.associated" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.baojia_t" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.duojian_t" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.early" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.everydate_price_t" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.facilities_t" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.honor" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.hotelfacilities_t" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.hotelpic_t" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.increase" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.increase_link" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.increase_order" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.invoice" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.live" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.log" Width="1.5" PointX="10.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.lvyun_link" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.ly_order_t" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.ly_ratecode_link" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.miaosha_t" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.newback" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.newroom_t" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.openid" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.order_t" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.PicClass" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.PicDb" Width="1.5" PointX="6.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.price_formulaid" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.ratecode_link" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.ratecode_t" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.rateroom_xz" Width="1.5" PointX="10.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.room_pic_t" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.roomlist_ls" Width="1.5" PointX="2.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.roomorder_ls" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.roomprice_t" Width="1.5" PointX="16.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.roomtimestart_t" Width="1.5" PointX="12.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.roomtype_f_t" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.rule" Width="1.5" PointX="14.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.Table_1" Width="1.5" PointX="16.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.week" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.xitongpic_t" Width="1.5" PointX="6.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.xztimestart_t" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.yhcode_t" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.GetRoom" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.GetScenceCode" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.View_3" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="yudingModel.hotel_list" Width="1.5" PointX="4.4947730137476576" PointY="29.992706208486439" />
+        <EntityTypeShape EntityType="yudingModel.GetIncrease" Width="1.5" PointX="9" PointY="19.375" />
+        <EntityTypeShape EntityType="yudingModel.GetRateCode_xz" Width="1.5" PointX="5.9545876504641893" PointY="22.022158483984953" />
+        <EntityTypeShape EntityType="yudingModel.activity_link" Width="1.5" PointX="1.4327958121117184" PointY="2.9379961653323825" />
+        <EntityTypeShape EntityType="yudingModel.special" Width="1.5" PointX="11.375" PointY="26" />
+        <EntityTypeShape EntityType="yudingModel.newroomtime" Width="1.5" PointX="5.6302397761634735" PointY="9.8523418800217755" />
+        <EntityTypeShape EntityType="yudingModel.GetRoomAndPrice" Width="1.5" PointX="1.875" PointY="4.625" />
+        <EntityTypeShape EntityType="yudingModel.GetRateCodexzByRoomtype" Width="1.5" PointX="11.122778445073767" PointY="7.3785185103204656" />
+        <EntityTypeShape EntityType="yudingModel.Tag" Width="1.5" PointX="1.6796806406600777" PointY="15.123595691809243" />
+        <EntityTypeShape EntityType="yudingModel.hotellist" Width="1.5" PointX="8.9073572479688359" PointY="1.8223171093605073" />
+        <EntityTypeShape EntityType="yudingModel.payurl" Width="1.5" PointX="3.128513235192985" PointY="16.758333750422267" />
+        <EntityTypeShape EntityType="yudingModel.categroyinfo" Width="1.5" PointX="10.26989873045585" PointY="14.522944218722612" />
+        <EntityTypeShape EntityType="yudingModel.categroyrule" Width="1.5" PointX="6.6280492072124257" PointY="16.048849470936158" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

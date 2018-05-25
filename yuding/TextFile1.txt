@@ -1,0 +1,227 @@
+﻿http://60.191.126.74/ceshi/预定后台3.0/room_scene.html
+
+[{"index":1,"num":null,"price":0.0},{"index":2,"num":null,"price":100.0}]
+
+添加设施原方法
+var FacilitiesJson = context.Request.Form["RoomFacilitiesJson"];
+            if (FacilitiesJson != null)
+            {
+                var result = JsonConvert.DeserializeObject<List<roomtype_f_t>>(FacilitiesJson);
+                using (var db = new yudingEntities())
+                {
+                    using (var transaction = db.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            if (result != null)
+                            {
+                                foreach (var item in result)
+                                {
+                                    var data = db.roomtype_f_t.FirstOrDefault(x => x.id == item.id);
+                                    if (data == null)
+                                    {
+                                        db.roomtype_f_t.AddOrUpdate(item);
+                                        addLog(db, hotelcode, oid, yemian, operation, item.fcode);
+                                    }
+                                }
+                                jsonResult.code = "200";
+                                jsonResult.msg = "添加或修改成功";
+                                transaction.Commit();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            jsonResult.code = "504";
+                            jsonResult.msg = ex.ToString();
+                            transaction.Rollback();
+                            HttpHepler.ReturnJson<JsonReturn>(jsonResult, context);
+                        }
+                    }
+                }
+            }
+
+
+
+			var stateEntry = ((IObjectContextAdapter)db).ObjectContext.
+                          ObjectStateManager.GetObjectStateEntry(RateCodeEntity.qudao);
+                                stateEntry.SetModifiedProperty("qudaocode");
+                                stateEntry.SetModifiedProperty("pmsratecode");
+
+
+设置房价码显示时间 old
+ var ratecodedisplay = context.Request.Form["ratecodedisplay"];
+            var batch = context.Request.Form["batch"];
+            if (batch != null)
+            {
+                try
+                {
+                    var result = JsonConvert.DeserializeObject<RateCodeDisplay>(ratecodedisplay);
+                    using (var db = new yudingEntities())
+                    {
+                        using (var transaction = db.Database.BeginTransaction())
+                        {
+                            try
+                            {
+                                if (result != null)
+                                {
+                                    var delratecodedisplay = db.xztimestart_t.Where(x => x.batch == batch && x.hotelid == hotelcode).ToList();
+                                    foreach (var item in delratecodedisplay)
+                                    {
+                                        db.xztimestart_t.Remove(item);
+                                    }
+                                    foreach (var item in result.week)
+                                    {
+                                        if (result.starttime != "" || result.endtime != "")
+                                        {
+                                            var displaydata = new xztimestart_t()
+                                            {
+                                                xz_code=result.xz_code,
+                                                hotelid = hotelcode,
+                                                flag = result.flag,
+                                                startdate = result.startdate,
+                                                enddate = result.enddate,
+                                                px = result.px,
+                                                week = item.index.ToString(),
+                                                batch = result.batch,
+                                                starttime = result.starttime,
+                                                endtime = result.endtime,
+                                            };
+                                            db.xztimestart_t.Add(displaydata);
+                                        }
+                                        else
+                                        {
+                                            var displaydata = new xztimestart_t()
+                                            {
+                                                xz_code = result.xz_code,
+                                                hotelid = hotelcode,
+                                                flag = result.flag,
+                                                startdate = result.startdate,
+                                                enddate = result.enddate,
+                                                px = result.px,
+                                                week = item.index.ToString(),
+                                                batch = result.batch,
+
+                                            };
+                                            db.xztimestart_t.Add(displaydata);
+                                        }
+                                        addLog(db, hotelcode, oid, yemian, operation, result.batch);
+                                    }
+                                }
+                                jsonResult.code = "200";
+                                jsonResult.msg = "添加或修改成功";
+                                db.SaveChanges();
+                                transaction.Commit();
+                            }
+                            catch (Exception ex)
+                            {
+                                jsonResult.code = "504";
+                                jsonResult.msg = ex.ToString();
+                                transaction.Rollback();
+                                HttpHepler.ReturnJson<JsonReturn>(jsonResult, context);
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+
+
+
+			var roomtype = Getpost("roomtype");
+                var time = DateTime.Parse(Getpost("starttime"));
+                
+                var end = GetTimeStamp(DateTime.Parse(Getpost("endtime")));
+                var xzlist = db.rateroom_xz.Where(x => x.roomtype == roomtype && x.flag == 0&&x.hotelid==hotelcode).GroupBy(x => x.xz_code).ToList();
+                var yuanjia = db.newroom_t.Where(x => x.roomtype == roomtype).FirstOrDefault().yuanjia;
+               
+                var list = new List<object>();
+                foreach (var item in xzlist)
+                {
+                    var xzcode = item.FirstOrDefault().xz_code;
+                    var price = db.everydate_price_t.Where(x => x.xz_code == xzcode && x.everydate == time).FirstOrDefault();
+                    if (price != null)
+                    {
+                        var num = price.num - price.ordernum;
+                        var miaosha = db.miaosha_t.Where(x => x.xz_code == xzcode).FirstOrDefault();
+                        var starttime="";
+                        var endtime = "";
+                        if (miaosha != null) 
+                        {
+                            starttime = GetTimeStamp(DateTime.Parse(miaosha.starttime)).ToString();
+                            endtime = GetTimeStamp(DateTime.Parse(miaosha.endtime)).ToString();
+                        }
+                       
+                        var ass = db.associateds.Where(x => x.xz_code == xzcode).FirstOrDefault();
+                        var baojia = db.baojia_t.Where(x => x.xz_code == xzcode).FirstOrDefault();
+                        var baojiaid = "";
+                        if (baojia != null)
+                        {
+                            baojiaid = baojia.formulaid.ToString();
+                        }
+                        object rules = null;
+                        object rulesname = null;
+                        if (ass != null)
+                        {
+                            if (ass.rules == "early")
+                            {
+                                var id = int.Parse(ass.codeid);
+                                rulesname = "early";
+                                var early = db.earlies.Where(x => x.id == id).FirstOrDefault();
+                                rules = early.code;
+                            }
+                            if (ass.rules == "live")
+                            {
+                                var id = int.Parse(ass.codeid);
+                                rulesname = "live";
+                                var live = db.lives.Where(x => x.id == id).FirstOrDefault();
+                                rules = live.code;
+                            }
+                        }
+                        var activty = db.activity_link.Where(x => x.xz_code == xzcode).FirstOrDefault();
+                        var dis = "";
+                        if (activty != null)
+                        {
+                            dis = db.Activities.Where(x => x.Code == activty.activitycode).FirstOrDefault().discount;
+                        }
+                        var formula = db.price_formulaid.Where(x => x.xz_code == xzcode).ToList();
+                        List<System.String> listS = new List<System.String>();
+                        string str = "";
+                        if (formula.Count > 0)
+                        {
+
+                            foreach (var item1 in formula)
+                            {
+                                listS.Add(item1.formulaid + ":" + item1.categoryid);
+                            }
+                            listS.ToArray();
+                        }
+                        str = string.Join(",", listS);
+                        var a = new
+                        {
+                            xzcode = xzcode,
+                            islock =price.islock,
+                            package = item.FirstOrDefault().package,
+                            payway=item.FirstOrDefault().payway,
+                            pay= item.FirstOrDefault().pay,
+                            xzname = item.FirstOrDefault().xz_name,
+                            yuanjia=yuanjia,
+                            num=num,
+                            baojia = baojiaid,
+                            price = price.price,
+                           starttime=starttime,
+                           endtime=endtime,
+                            startdate =GetTimeStamp( time),
+                           enddate=end,
+                           rulesname = rulesname,
+                           rules = rules,
+                           activty = dis,
+                           formula = str,
+                        };
+                        list.Add(a);
+                    }
+                }

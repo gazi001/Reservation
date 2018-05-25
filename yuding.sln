@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yuding", "yuding\yuding.csproj", "{98A37289-7218-4479-B2E2-BFBB2364EB44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RM.Common", "..\WeiXinAPI\RM.Common\RM.Common.csproj", "{F1DAC157-5CF0-4ABE-AB30-E1B0EADA5354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.SDK", "WS.SDK\WS.SDK.csproj", "{4C2446E5-8423-452B-840D-A41D27675B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ws.XMS", "Ws.XMS\Ws.XMS.csproj", "{F1AA5662-D17E-4794-8316-946E53851AA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98A37289-7218-4479-B2E2-BFBB2364EB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A37289-7218-4479-B2E2-BFBB2364EB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A37289-7218-4479-B2E2-BFBB2364EB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A37289-7218-4479-B2E2-BFBB2364EB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1DAC157-5CF0-4ABE-AB30-E1B0EADA5354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1DAC157-5CF0-4ABE-AB30-E1B0EADA5354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1DAC157-5CF0-4ABE-AB30-E1B0EADA5354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1DAC157-5CF0-4ABE-AB30-E1B0EADA5354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2446E5-8423-452B-840D-A41D27675B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2446E5-8423-452B-840D-A41D27675B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2446E5-8423-452B-840D-A41D27675B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2446E5-8423-452B-840D-A41D27675B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1AA5662-D17E-4794-8316-946E53851AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1AA5662-D17E-4794-8316-946E53851AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1AA5662-D17E-4794-8316-946E53851AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1AA5662-D17E-4794-8316-946E53851AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

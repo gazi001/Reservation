@@ -1,0 +1,11 @@
+﻿<label class="room_con"><input type="checkbox" name="type[]" value="0"/> 客房</label>
+                    <label class="room_con"><input type="checkbox" name="type[]" value="1"/> 餐饮</label>
+                    <label class="room_con"><input type="checkbox" name="type[]" value="2"/> 会议室</label>
+                    <label class="room_con"><input type="checkbox" name="type[]" value="3"/> 商城</label>
+                    <label class="room_con"><input type="checkbox" name="type[]" value="4"/> 渠道管理</label>
+
+
+					0 非直连
+					1 绿云
+					2 西软pms
+					3西软xms

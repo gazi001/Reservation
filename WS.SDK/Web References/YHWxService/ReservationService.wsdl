@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReservationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://122.226.235.163:20001/PMSDataInterface/ReservationService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://122.226.235.163:20001/PMSDataInterface/ReservationService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReservationService_Reservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reservation" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_Reservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_CheckOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOut" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_CheckOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_RateQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateQuery" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_RateQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_RateQueryByCusNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateQueryByCusNo" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_RateQueryByCusNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateQueryByCusNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetReservationDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReservationDetail" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetReservationDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReservationDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ResCancel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResCancel" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ResCancel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResCancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationPayment" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReserveTypeAvail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReserveTypeAvail" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReserveTypeAvail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReserveTypeAvailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetRmrate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmrate" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetRmrate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmrateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_SearchRoomType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRoomType" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_SearchRoomType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRoomTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_CheckCusNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCusNo" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_CheckCusNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCusNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationCashment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationCashment" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationCashment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationCashmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationAccountment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationAccountment" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationAccountment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationAccountmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetCardnoConsumes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardnoConsumes" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetCardnoConsumes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardnoConsumesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_DelCardnoConsumes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelCardnoConsumes" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_DelCardnoConsumes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelCardnoConsumesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationAccountmentByCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationAccountmentByCard" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationAccountmentByCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationAccountmentByCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_Getdic_InputMessage">
+    <wsdl:part name="parameters" element="tns:Getdic" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_Getdic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetdicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GuestAccountQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuestAccountQuery" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GuestAccountQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuestAccountQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GuestOrderQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuestOrderQuery" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GuestOrderQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuestOrderQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetRoomSta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomSta" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetRoomSta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomStaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetRoomFutureSta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomFutureSta" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetRoomFutureSta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoomFutureStaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_BalanceToAraccnt_InputMessage">
+    <wsdl:part name="parameters" element="tns:BalanceToAraccnt" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_BalanceToAraccnt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BalanceToAraccntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ParamTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParamTest" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ParamTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParamTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_SelectRoomno_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectRoomno" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_SelectRoomno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectRoomnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSMS" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_UpdateSMSstate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSMSstate" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_UpdateSMSstate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSMSstateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetCusnoBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCusnoBill" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_GetCusnoBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCusnoBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationPayByCredit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationPayByCredit" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_ReservationPayByCredit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReservationPayByCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_CheckGuestLegal_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckGuestLegal" />
+  </wsdl:message>
+  <wsdl:message name="IReservationService_CheckGuestLegal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckGuestLegalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReservationService">
+    <wsdl:operation name="Reservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/Reservation" message="tns:IReservationService_Reservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReservationResponse" message="tns:IReservationService_Reservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/CheckOut" message="tns:IReservationService_CheckOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/CheckOutResponse" message="tns:IReservationService_CheckOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/RateQuery" message="tns:IReservationService_RateQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/RateQueryResponse" message="tns:IReservationService_RateQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateQueryByCusNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/RateQueryByCusNo" message="tns:IReservationService_RateQueryByCusNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/RateQueryByCusNoResponse" message="tns:IReservationService_RateQueryByCusNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetReservationDetail" message="tns:IReservationService_GetReservationDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetReservationDetailResponse" message="tns:IReservationService_GetReservationDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResCancel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ResCancel" message="tns:IReservationService_ResCancel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ResCancelResponse" message="tns:IReservationService_ResCancel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservationPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ReservationPayment" message="tns:IReservationService_ReservationPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReservationPaymentResponse" message="tns:IReservationService_ReservationPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReserveTypeAvail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ReserveTypeAvail" message="tns:IReservationService_ReserveTypeAvail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReserveTypeAvailResponse" message="tns:IReservationService_ReserveTypeAvail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRmrate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetRmrate" message="tns:IReservationService_GetRmrate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetRmrateResponse" message="tns:IReservationService_GetRmrate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoomType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/SearchRoomType" message="tns:IReservationService_SearchRoomType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/SearchRoomTypeResponse" message="tns:IReservationService_SearchRoomType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCusNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/CheckCusNo" message="tns:IReservationService_CheckCusNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/CheckCusNoResponse" message="tns:IReservationService_CheckCusNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservationCashment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ReservationCashment" message="tns:IReservationService_ReservationCashment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReservationCashmentResponse" message="tns:IReservationService_ReservationCashment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservationAccountment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ReservationAccountment" message="tns:IReservationService_ReservationAccountment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReservationAccountmentResponse" message="tns:IReservationService_ReservationAccountment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardnoConsumes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetCardnoConsumes" message="tns:IReservationService_GetCardnoConsumes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetCardnoConsumesResponse" message="tns:IReservationService_GetCardnoConsumes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelCardnoConsumes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/DelCardnoConsumes" message="tns:IReservationService_DelCardnoConsumes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/DelCardnoConsumesResponse" message="tns:IReservationService_DelCardnoConsumes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservationAccountmentByCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ReservationAccountmentByCard" message="tns:IReservationService_ReservationAccountmentByCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReservationAccountmentByCardResponse" message="tns:IReservationService_ReservationAccountmentByCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Getdic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/Getdic" message="tns:IReservationService_Getdic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetdicResponse" message="tns:IReservationService_Getdic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuestAccountQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GuestAccountQuery" message="tns:IReservationService_GuestAccountQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GuestAccountQueryResponse" message="tns:IReservationService_GuestAccountQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuestOrderQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GuestOrderQuery" message="tns:IReservationService_GuestOrderQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GuestOrderQueryResponse" message="tns:IReservationService_GuestOrderQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomSta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetRoomSta" message="tns:IReservationService_GetRoomSta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetRoomStaResponse" message="tns:IReservationService_GetRoomSta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomFutureSta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetRoomFutureSta" message="tns:IReservationService_GetRoomFutureSta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetRoomFutureStaResponse" message="tns:IReservationService_GetRoomFutureSta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BalanceToAraccnt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/BalanceToAraccnt" message="tns:IReservationService_BalanceToAraccnt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/BalanceToAraccntResponse" message="tns:IReservationService_BalanceToAraccnt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParamTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ParamTest" message="tns:IReservationService_ParamTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ParamTestResponse" message="tns:IReservationService_ParamTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectRoomno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/SelectRoomno" message="tns:IReservationService_SelectRoomno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/SelectRoomnoResponse" message="tns:IReservationService_SelectRoomno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetSMS" message="tns:IReservationService_GetSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetSMSResponse" message="tns:IReservationService_GetSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSMSstate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/UpdateSMSstate" message="tns:IReservationService_UpdateSMSstate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/UpdateSMSstateResponse" message="tns:IReservationService_UpdateSMSstate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCusnoBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/GetCusnoBill" message="tns:IReservationService_GetCusnoBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/GetCusnoBillResponse" message="tns:IReservationService_GetCusnoBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservationPayByCredit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/ReservationPayByCredit" message="tns:IReservationService_ReservationPayByCredit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/ReservationPayByCreditResponse" message="tns:IReservationService_ReservationPayByCredit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckGuestLegal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservationService/CheckGuestLegal" message="tns:IReservationService_CheckGuestLegal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservationService/CheckGuestLegalResponse" message="tns:IReservationService_CheckGuestLegal_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReservationServiceHttpEndpoint" type="tns:IReservationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Reservation">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/Reservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOut">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/CheckOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateQuery">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/RateQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateQueryByCusNo">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/RateQueryByCusNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservationDetail">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetReservationDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResCancel">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ResCancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservationPayment">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ReservationPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReserveTypeAvail">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ReserveTypeAvail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRmrate">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetRmrate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRoomType">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/SearchRoomType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCusNo">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/CheckCusNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservationCashment">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ReservationCashment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservationAccountment">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ReservationAccountment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardnoConsumes">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetCardnoConsumes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelCardnoConsumes">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/DelCardnoConsumes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservationAccountmentByCard">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ReservationAccountmentByCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Getdic">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/Getdic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuestAccountQuery">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GuestAccountQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuestOrderQuery">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GuestOrderQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomSta">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetRoomSta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoomFutureSta">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetRoomFutureSta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BalanceToAraccnt">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/BalanceToAraccnt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParamTest">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ParamTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectRoomno">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/SelectRoomno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSMS">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSMSstate">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/UpdateSMSstate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCusnoBill">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/GetCusnoBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservationPayByCredit">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/ReservationPayByCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckGuestLegal">
+      <soap:operation soapAction="http://tempuri.org/IReservationService/CheckGuestLegal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReservationService">
+    <wsdl:port name="ReservationServiceHttpEndpoint" binding="tns:ReservationServiceHttpEndpoint">
+      <soap:address location="http://122.226.235.163:20001/PMSDataInterface/ReservationService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
